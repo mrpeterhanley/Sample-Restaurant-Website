@@ -79,6 +79,10 @@ button {
   padding: 10px 20px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 img {
   max-width: 100%;
 }
@@ -131,6 +135,7 @@ img {
 
 .cta:hover {
   background-color: var(--item-hover);
+  cursor: pointer;
 }
 
 .cta p {
