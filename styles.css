@@ -1,15 +1,16 @@
 :root {
-  --yellow: #bfdcae;
-  --black: #272727;
+  --item: #d2f6c5;
+  --text: #272727;
+  --item-hover: #eff48e;
+  --button: gold;
 }
 
 html {
-  /* border-box box model allows us to add padding and border to our elements without increasing their size */
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   font-weight: 900;
   font-size: 10px;
-  color: var(--black);
+  color: var(--text);
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
 }
 
@@ -44,16 +45,24 @@ h5,
 h6 {
   margin: 0 0 5px 0;
 }
-/* Each item in our grid will contain numbers */
+
+button {
+  font-weight: 600;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+button:hover {
+  background-color: var(--button);
+}
+
 .item {
-  /* We center the contents of these items. You can also do this with flexbox too! */
   display: grid;
   justify-content: center;
   align-items: center;
   border: 5px solid rgba(0, 0, 0, 0.03);
   border-radius: 3px;
   font-size: 35px;
-  background-color: var(--yellow); /* best colour */
+  background-color: var(--item);
 }
 
 .item p {
@@ -65,7 +74,7 @@ h6 {
 }
 
 button {
-  background: #ffc600;
+  background: var(--item-hover);
   border: 0;
   padding: 10px 20px;
 }
@@ -75,7 +84,6 @@ img {
 }
 
 /* .wrapper */
-
 .wrapper {
   display: grid;
   grid-gap: 20px;
@@ -110,15 +118,19 @@ img {
 
 .hero > h1 {
   font-family: "Cantora One", sans-serif;
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .cta {
-  background: var(--yellow);
+  background: var(--item);
   display: grid;
   align-items: center;
   justify-items: center;
   align-content: center;
+}
+
+.cta:hover {
+  background-color: var(--item-hover);
 }
 
 .cta p {
@@ -139,7 +151,6 @@ img {
 }
 
 /* Navigation */
-
 .menu ul {
   display: grid;
   grid-gap: 10px;
@@ -149,7 +160,7 @@ img {
 }
 
 .menu a {
-  background: var(--yellow);
+  background: var(--item);
   display: block;
   text-decoration: none;
   padding: 10px;
@@ -159,12 +170,15 @@ img {
   font-size: 20px;
 }
 
+.menu a:hover {
+  background-color: var(--item-hover);
+}
+
 [aria-controls="menu-list"] {
   display: none;
 }
 
-/* Features! */
-
+/* Features */
 .features {
   display: grid;
   grid-gap: 20px;
@@ -187,7 +201,6 @@ img {
 }
 
 /* About Section */
-
 .about {
   background: white;
   padding: 50px;
@@ -197,8 +210,7 @@ img {
   align-items: center;
 }
 
-/* Gallery! */
-
+/* Gallery */
 .gallery {
   display: grid;
   grid-gap: 20px;
@@ -224,7 +236,7 @@ img {
   height: 10px;
   background: linear-gradient(
     to var(--direction, left),
-    var(--yellow),
+    var(--item),
     transparent
   );
 }
@@ -268,9 +280,11 @@ img {
     display: none;
   }
 
+  .hero > h1 {
+    font-size: 3em;
+  }
+
   .features {
-    display: grid;
-    grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -281,7 +295,7 @@ img {
       "hero hero"
       "cta1 cta2";
   }
-  /* About */
+
   .about {
     grid-template-columns: 1fr;
   }
