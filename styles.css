@@ -23,7 +23,7 @@ html {
 
 body {
   font-size: 15px;
-  margin: 50px;
+  margin: 50px 50px 20px 50px;
   background: #11998e; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -248,6 +248,11 @@ img {
 
 .gallery h2:after {
   --direction: right;
+}
+
+footer {
+  text-align: center;
+  margin: 10px 5px;
 }
 
 @media (max-width: 1000px) {
